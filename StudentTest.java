@@ -18,15 +18,15 @@ class StudentTest {
     public void testAddClass(){
     	
         // Arrange
-		Student student = new Student(1);
+	Student student = new Student(1);
 		
         // Act
-		student.addClass(se450);
-		List<Class> classList = new ArrayList();
-		classList = student.getClasses();
+	student.addClass(se450);
+	List<Class> classList = new ArrayList();
+	classList = student.getClasses();
 		
         // Assert
-		assertTrue(classList.contains(se450));
+	assertTrue(classList.contains(se450));
     }
 
     // Test that a class does not get added if maxNumberOfClasses
@@ -37,18 +37,18 @@ class StudentTest {
     public void testAddClassDoesntAddClassesIfMaxed(){
 
         // Arrange
-		Student student = new Student(2);
+	Student student = new Student(2);
 		
         // Act
-		student.addClass(se450);
-		student.addClass(se440);
-		student.addClass(csc447);
+	student.addClass(se450);
+	student.addClass(se440);
+	student.addClass(csc447);
 		
-		List<Class> classList = new ArrayList();
-		classList = student.getClasses();
+	List<Class> classList = new ArrayList();
+	classList = student.getClasses();
 		
         // Assert
-		assertFalse(classList.contains(csc447));
+	assertFalse(classList.contains(csc447));
 
     }
 
@@ -59,16 +59,16 @@ class StudentTest {
     public void testGetFormattedSchedule(){
 
         // Arrange
-		Student student = new Student(2);
+	Student student = new Student(2);
 		
         // Act
-		Class se440 = new Class("se440");
-		Class csc447 = new Class("csc447");
-		student.addClass(se440);
-		student.addClass(csc447);
+	Class se440 = new Class("se440");
+	Class csc447 = new Class("csc447");
+	student.addClass(se440);
+	student.addClass(csc447);
 		
         // Assert
-		System.out.println(student.getFormattedSchedule());
+	System.out.println(student.getFormattedSchedule());
         assertEquals("se440\r\ncsc447\r\n",student.getFormattedSchedule());
     }
 
@@ -78,11 +78,11 @@ class StudentTest {
     public void testGetFormattedScheduleReturnsNoClassesAddedIfNoClasses(){
 
         // Arrange
-		Student student = new Student(2);
+	Student student = new Student(2);
 		
         // Act- nothing needed here
 		
         // Assert
-		assertEquals("No classes added.", student.getFormattedSchedule());
+	assertEquals("No classes added.", student.getFormattedSchedule());
     }
 }
